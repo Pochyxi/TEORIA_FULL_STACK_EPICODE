@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+</head>
+<body>
+    <p>Math è un oggetto statico che ha una serie di metodi (matematici). Math mette a disposizione una serie di proprietà e metodi
+        che possiamo richiamare in qualsiasi punto di uno script</p>
+    <table>
+        <tr><th colspan="2">Le proprietà sono delle costanti matematiche</th></tr>
+        <tr><td>E</td><td>Costante di Eulero</td></tr>
+        <tr><td>LN2</td><td>Logaritmo di 2</td></tr>
+        <tr><td>LN10</td><td>Logaritmo di 10</td></tr>
+        <tr><td> LOG2E</td><td> Logaritmo in base 2 della costante di Eulero</td></tr>
+        <tr><td> LOG10E</td><td>Logaritmo in base 10 della costante di Eulero </td></tr>
+        <tr><td> PI</td><td>Pi greco </td></tr>
+        <tr><td>SQRT1_2</td><td>Radice quadrata di 1/2</td></tr>
+        <tr><td>SQRT2</td><td>Radice quadrata di 2</td></tr>
+    </table>
+    <p id="demo"></p>
+    <script>
+        // document.getElementById('demo').innerHTML = Math.PI
+    </script>
+    <p>I metodi <code>Math</code> rappresentano le funzioni matematiche più comuni</p>
+    <script>
+        document.getElementById('demo').innerHTML = Math.max(5, 10, 15); //restituisce il valore più alto
+        document.getElementById('demo').innerHTML = Math.min(5, 10, 5); // restituisce il valore più basso
+        document.getElementById('demo').innerHTML = Math.pow(4, 3);      // elevo a potenza 4 alla terza
+        document.getElementById('demo').innerHTML = Math.sqrt(9);       // radice quadrata
+        document.getElementById('demo').innerHTML = Math.ceil(1.4);      // arrotonda all'intero più grande
+        document.getElementById('demo').innerHTML = Math.floor(1.6);     // arrotonda all'intero più piccolo
+        document.getElementById('demo').innerHTML = Math.round(1.5);    // arrotonda all'intero più vicino
+        document.getElementById('demo').innerHTML = Math.random()       // genera casuale tra 0 e 1
+
+        document.getElementById('demo').innerHTML = Math.floor(Math.random() * 100);
+        // combino due metodi -> arrotondo a intero un numero casuale (tra 0 e 1) e lo moltiplico per 100
+        // otterrò un numero intero tra 0 e 99
+        // seno, coseno, tangente, arcotangente, logaritmi, radici, potenze
+        // Math.abs -> restituisce il valore assoluto (senza segno di un numero)
+        // Math.log -> calcola il logaritmo naturale di un numero
+        // Math.sin -> seno
+        // Math.cos -> coseno
+        // Math.tan -> tangente
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web semantico</title>
+</head>
+<body>
+<div id="container">
+    <header><!-- intestazione -->
+        <img src="img/logo.png" alt="Epicode logo" width="100">
+        <form action="#" method="#">
+            <input type="search" id="search" name="search">
+        </form>
+    </header>
+    <nav><!-- menu di navigazione -->
+        <ul>
+            <li><a href="chi_siamo.html">Chi siamo</a></li>
+            <li><a href="#">I nostri corsi</a>
+                <ul>
+                    <li><a href="">Base</a></li>
+                    <li><a href="">Avanzato</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Lavora con noi</a></li>
+            <li><a href="#">Iscriviti</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+    <main><!-- contenuto principale-->
+        <article>
+            <h2>Titolo del mio articolo</h2>
+            <h3>Sotto titolo del mio articolo</h3>
+<p>Chocolate sweet roll tootsie roll carrot cake cake donut gummies carrot cake. Cupcake cake toffee candy shortbread. Caramels halvah sugar plum croissant sugar plum cheesecake oat cake caramels pie. Dragée topping jujubes cheesecake gummies toffee chupa chups. Cupcake cotton candy bear claw dessert fruitcake ice cream halvah powder carrot cake. Marzipan dragée marshmallow candy canes halvah wafer apple pie. Pastry dessert chocolate cake liquorice jujubes tootsie roll tiramisu carrot cake. Topping ice cream tiramisu shortbread jelly beans croissant pie chocolate carrot cake.</p>
+<p>Carrot cake macaroon chocolate sesame snaps liquorice pie. Donut brownie icing pastry chocolate cake chocolate cake soufflé. Ice cream sugar plum candy shortbread ice cream cheesecake. Cotton candy sweet gingerbread lemon drops sweet pudding pudding candy gummi bears. Jelly-o bear claw liquorice cotton candy tootsie roll halvah. Cake shortbread cupcake donut pie croissant sesame snaps lemon drops.</p>
+<p>Oat cake bear claw brownie shortbread tiramisu pie cake tootsie roll. Chocolate cake marzipan bonbon fruitcake macaroon. Croissant topping biscuit chocolate cake sweet. Jelly beans carrot cake biscuit chocolate cake cheesecake candy canes. Lollipop powder ice cream gummies cake tootsie roll cotton candy dragée pie. Cake lemon drops cupcake oat cake liquorice cookie jelly jujubes cupcake. Chocolate cake halvah brownie pudding jujubes. Brownie dessert jujubes powder gummies lollipop.</p>
+        </article>
+        <section>
+            <form method="#" action="#">
+                <label for="commento">Lascia il tuo commento</label><br>
+                <textarea name="commento" id="commento" placeholder="Lascia il tuo commento"></textarea><br>
+                <label for="newsletter">Iscriviti alla newsletter</label><br>
+                <input type="email" name="newsletter" id="newsletter"><br>
+                <label for="privacy">Accetto i termini di utilizzo</label><br>
+                <input type="checkbox" name="privacy" id="privacy" checked><br>
+                <input type="submit">
+            </form>
+        </section>
+        <!-- 
+            main può contenere più section o più article 
+            section può contenere più article ma anche viceversa
+            article e section non sono necessariamente in rapporto parent/child dipende dal tipo di contenuti
+        -->
+    </main>
+    <aside><!-- contenuto secondario -->
+        <ul>
+            <li><a href="corso.html" title="corso"><img src="img/epicode.jpeg" width="30" alt="Corso"></a></li>
+            <li><a href="corso2.html" title="corso due"><img src="img/epicode.jpeg" width="30" alt="Corso due"></a></li>
+            <li><a href="corso3.html" title="corso tre"><img src="img/epicode.jpeg" width="30" alt="Corso tre"></a></li>
+        </ul>
+    </aside>
+    <footer><!-- piè di pagina-->
+        <p>Tutti i diritti riservati - Epicode&copy; Via Cicerone 1, 00100 Roma .:. <a href="privacy.html">Leggi</a> l'informativa sulla privacy</p>
+    </footer>
+</div>
+</body>
+</html>

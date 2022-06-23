@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srcset per caricare più versioni</title>
+</head>
+<body>
+    <h1>Creo un tag picture e carico immagini diverse a seconda della risoluzione</h1>
+    <picture>
+        <source media="(min-width:768px)" srcset="/img/cigno1900.jpg"> <!-- dispositivi più grandi -->
+        <source media="(min-width:480px)" srcset="/img/cigno1280.jpg"> <!-- dispositivi intermedi -->
+        <img src="/img/cigno640.jpg" alt="cigno">
+    </picture>
+</body>
+</html>

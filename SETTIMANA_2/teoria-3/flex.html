@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {                        /* contenitore di #container */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* main axis */
+            align-items: center;     /* cross axis */
+        }
+        #container {
+            background-color: #e3e3e3;
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: row;
+            flex-flow: row nowrap;          /* direzione e multiriga si/no */
+            align-items: center;            /* centratura verticale */
+            justify-content: space-around;  /* space-between primo e ultimo sono gli estremi | space-around aggiunge un margine */
+
+        }
+        #box-1 {
+            background-color: red;
+            border: 2px solid black;
+            order: 2;                   /* cambio ordine di visualizzazione */
+        }
+        #box-2 {
+            background-color: blue;
+            border: 2px solid black;
+            order: 3;
+        }
+        #box-3 {
+            background-color: green;
+            border: 2px solid black;
+            order: 1;
+        }
+        #box-1, #box-2, #box-3 {padding: 30px;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box-1">Box 1</div>
+        <div id="box-2">Box 2</div>
+        <div id="box-3">Box 3</div>
+    </div>
+
+    <!-- 
+        Flex è basato su due elementi costitutivi: 1. elemento contenitore
+                                                    2. i box contenuti
+        ****** container *****
+        1. display: flex        -> proprietà fondamentale per impostare un contenitore flex
+        
+        2. flex-direction: row | row-reverse | column | column-reverse
+                                -> specifica la direzione sul main axis (da sx a dx)
+        
+        3. flex-wrap: no-wrap | wrap | wrap-reverse
+                                -> specifica se i box si dispongono su una o più righe
+        
+        4. flex-flow:           -> sintassi abbreviata per flex-direction e flex-wrap
+        
+        5. justify-content      -> flex-start | flex-end | center | space-between | space-around
+                                -> stabilisce come i box si allineano sul main axis
+        
+        6. align-items: stretch | flex-start | flex-end | center | baseline
+                                -> stabilisce come i box si allineano sul cross axis
+        
+        7. align-content:       -> flex-start | flex-end | center | space-between | space-around
+                                -> stabilisce come si allineano le righe sul cross axis rispetto alle altre
+
+        ******* item *******
+        1. order                -> specifica l'ordine in cui viene mostrato un box rispetto agli altri
+        
+        2. align-self: auto | flex-start | flex-end | center | baseline | stretch
+                                -> specifica per un singolo box l'allineamento sull'asse perpendicolare
+                                -> supera l'istruzione generica definita con align-items
+        
+        3. flex-grow (flex)     -> il fattore di ingrandimento di un box rispetto all'altro
+        
+        4. flex-shrink          -> è l'opposto di flex-grow (agisce sul restringimento dei box)
+        
+        5. flex-basis           -> specifico la dimensione iniziale (% | valori assoluti)
+        
+        6. flex                 -> riassume flex-grow [flex shirink] [flex-basis]
+    -->
+</body>
+</html>

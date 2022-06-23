@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variabili</title>
+    <style>
+        body {text-align: center;background-color: wheat; font-size: 1.5rem;}
+        h1, h2, h3 {
+            color: red;
+            font-family:sans-serif;
+        }
+        b {
+            color: rgb(50, 50, 205);
+        }
+        p {
+            background-color: whitesmoke;
+            border: 5px outset black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Le variabili</h2>
+    <p>Servono per memorizzare dei valori</p>
+    <p>Ogni variabile è identificata da un nome che segue alcune regole:</p>
+    <ul>
+        <li>Non deve coincidere con le keywords di javascript</li>
+        <li>Non può iniziare con un numero e non può contenere caratteri speciali ( - ? . spazio bianco)</li>
+        <li>Sono ammessi _ $</li>
+    </ul>
+    <p>Esempi di nome validi -> variabile, _variabile1, a$tro3</p>
+    <p>Esempi di nomi non validi -> while, 2variabile, varia.bile</p>
+    <p>javascript è <em>case sensitive</em> e perciò Variabile1 e variabile1 sono due variabili diverse</p>
+    <h4>Dichiarazione implicita delle variabili</h4>
+    <p>Non è obbligatorio dichiarare le variabili, cioè fare un'operazione esplicita di creazione. <br>
+    Quando c'è un identificatore (=) l'engine crea implicitamente la variabile, se non esiste già.</p>
+    <script>
+        variabile = 3; // questa pratica di non dichiarare le variabili, può favorire errori e ambiguità
+        // una variabile non dichiarata si crea al primo utilizzo ed è accessibile in ogni punto dello script
+        // rischio -> quando il nostro script diventa complesso potremmo utilizzare in punti diversi variabili con lo stesso nome
+        // generare comportamenti non previsti
+        // è opportuno SEMPRE dichiarare una variabile tramite la keyword var
+        var miaVariabile;
+        // se dichiaro la variabile con var stabilisco uno scope
+        // scope -> è l'ambito di accessibilità della variabile
+    </script>
+    <h2>Strict mode</h2>
+    <p>E' un'opzione introdotta dalla versione 5 dello standard ECMAScript che ci consente di scrivere codice 
+        osservando strettamente le regole di scrittura e quindi ad esempio di ricevere una segnalazione di errore
+        quando non dichiariamo le variabili. <br>
+        javascript avrebbe delle regole "più permissive", con lo strict mode ci abituiamo a uno stile di programmazione 
+        più strutturato.
+        <p>
+        <script>
+            "use strict";           // dicitura per abilitare lo strict mode
+            // è una stringa, non un'istruzione vera e propria -> garantisce la retro-compatibilità
+            // ogni assenza di dichiarazione di variabili viene intercettata e ci verrà segnalato un errore
+        </script>
+        <h2>Le costanti</h2>
+        <p>Introdotta con ECMAScript 5. Istruisce l'engine che il valore non è modificabile</p>
+        <script>
+            // const PIGRECO = 3.14; // garantisce l'utilizzo in sola lettura del valore
+            var PIGRECO = 3.14; // la prassi di scrivere maiuscolo indicava un valore non modificabile
+                                // ma la keyword var non ne garantiva il non accesso in scrittura (e quindi di sovrascrivere)
+        </script>
+    <p>Fino a ECMAScript 6 var era l'unica possibilità per dichiarare delle variabili</p>
+    <h2>Differenze tra var, e const</h2>
+    <p>Let e const fungono da estensioni del concetto di var. Quando li uso?</p>
+    <script>
+        var x = 10; // dichiaro tre variabili a cui associo 3 valori
+        var y = 20; // le variabili dichiarate in questo modo sono considerate variabili globali (appartenenti a uno scope globale)
+        var z = 30; // lo scope (cioè l'ambito di accessibilità) è la risposta al perchè sono stati creati altri identificatori
+    </script>
+    <h2>Scope globale e scope locale</h2>
+    <p>quando dichiariamo una variabile con la keyword var questa implicitamente appartiene all'oggetto globale window </p>
+    <script>
+        var x = 10;
+        var p = document.getElementById('demo');
+        p.innerHTML = window.x      // usare x o window.x è la stessa cosa
+    </script>
+    <p>In javascript possiamo dichiarare e usare delle funzioni. Nelle funzioni esiste uno scope locale.
+        Lo scope locale è diverso da quello globale.
+    </p>
+    
+    <script>
+        "use strict";
+        var x = "fuori";                // dichiaro la variabile x fuori dalla funzione
+        function faiQualcosa () {
+            var x = "dentro";           // dichiaro var x dentro la funzione
+            console.log(x);
+        }
+        faiQualcosa();                  // dentro
+        console.log(x);                 // fuori
+        // Javascript non ha problemi a interpetrare le due variabili, infatti quella globale non viene alterata
+
+        var x = "fuori";                // dichiaro la variabile x fuori dalla funzione
+        function faiQualcosa () {
+             x = "dentro";           // assegno un valore x senza dichiarare la keyword var
+            console.log(x);
+        }
+        faiQualcosa();              // dentro
+        console.log(x);             // dentro
+        // non abbiamo specificato che la variabile x deve avere uno scope locale
+        // la variabile globale è accessibile dall'interno delle funzioni
+        // il valore di x viene alterato
+        // il contrario non è vero: le variabili dichiarate dentro le funzioni (hanno scope locale)
+        // NON sono accessibili dall'esterno della funzione
+        // var ha uno scope globale/locale a seconda se viene dichiarato fuori o dentro la funzione
+
+        // le parentesi { } racchiudono un block scope, un blocco di codice "a se" rispetto al codice globale
+        // la differenza tra var e let sta nello scope
+        // ---> una variabile dichiarata con var non ha block scope -> è accessibile anche all'esterno del blocco di codice
+        // -> una variabile dichiarata con var ha block scope -> è quindi accessibile solo all'interno del blocco di codice
+
+        // esempio 
+        // ... 
+        // codice globale
+        // blocco
+        {
+            var x = 2;
+        }
+        var i = 0;
+
+        if(true) {
+            var i = 1;
+        }
+
+        console.log(i) // 1 -> riscrive i che è modificabile anche all'esterno del blocco
+
+        let i = 0;
+
+        if(true) {
+            let i = 1;
+        }
+
+        console.log(i); // 0 -> la variabile i viene riassegnata all'interno del blocco if
+                        // quell'assegnamento, usando let, è riferito SOLO al blocco di codice di appartenenza
+
+        // function scope
+        function myFunction() {
+            var myName = 'Federico'  // function scope
+        }
+        function myFunction() {
+            let myName = 'Federico'  // function scope
+        }
+
+        // scope globale
+        var x = 2;          //scope globale
+        let y = 2;          // scope globale
+        // le variabili globali dichiarate con var sono accessibili tramite l'oggetto window quelle dichiarate con le no
+        var myName = 'federico';
+        var p = document.getElementById('demo');
+        p.innerHTML = window.myName;  //okay
+
+        let myName = 'federico';
+        var p = document.getElementById('demo');
+        p.innerHTML = window.myName; // errore
+
+        // ridichiarazione
+        var x = 2;  // ora x è 2
+        var x = 3; // ora x è 3         // è consentito ovunque
+        let x = 2; // è consentito
+         
+        {
+            let x = 3; // è consentito ridichiarare in uno scope differenza
+        }
+        {
+            let x = 4; // è consentito ridichiarare in uno scope differenza
+        }
+        // non è consentito
+        var x = 2; // consentito
+        let x = 3; // non consentito
+        {
+            var x = 4; //consentito
+            // let x = 5; // non consentito 
+
+            // !non posso ridichiarare var usando l'indentificatore let ne nello scope globale nè in quello locale
+
+            let x = 2; //consentito
+            var x = 3; //non consentito
+        }
+    </script>
+        <h2>Hoisting</h2>
+        <p>Comportamento in cui le variabili possono essere usate PRIMA della dichiarazione</p>
+        <p>var l'hoisting è legale invece con let no</p>
+        <script>
+            // qui posso usare myName anche se lo dichiaro in seguito
+            myName = "federico"
+            var p = document.getElementById('demo');
+        p.innerHTML = window.myName;  //okay
+        //dichiarazione
+        var myName
+
+        // qui NON posso usare myName anche se lo dichiaro in seguito
+        myName = "federico"
+            var p = document.getElementById('demo');
+        p.innerHTML = window.myName;  //okay
+
+        //dichiarazione
+        let myName
+        </script>
+        <h2>Const</h2>
+        <p>Le variabili dichiarate con const si comportano come quelle dichiarate con let </p>
+        <p>La differenza è che con const non posso riassegnare</p>
+        <script>
+            const PI = 3.141592653589793;
+            PI = 3.14; // errore
+            PI = PI + 10; // errore
+
+            var x = 10;
+            //qui x è 10
+            {
+                const x = 2;
+                // qui x è 2
+            }
+            //qui è 10
+
+            // const deve essere assegnata in fase di dichiarazione
+            const PIgreco = 3.141592653589793 // ok
+
+            // const pigreco;
+            // pigreco = 3.141592653589793     // syntax error
+        </script>
+
+</body>
+</html>

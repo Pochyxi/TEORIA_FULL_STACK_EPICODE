@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array esempi</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        const fruits = ['Banana', 'Arancia', 'Mela', 'Mango'];
+        // length -> conta gli elementi, restituisce un array fino a una certa posizione
+        
+
+       //let length = fruits.length;
+        //document.getElementById('demo').innerHTML = length;    // stampa il numero di elementi contenuti in un array
+
+        //fruits.length = 2;
+        //document.getElementById('demo').innerHTML = fruits;     // stampa l'array fino alla posizione 2
+
+        //**** push -> aggiungi un elemento infondo all'array 
+        //fruits.push('Kiwi', 'limoni')
+        //document.getElementById('demo').innerHTML = fruits;   
+
+        //***** pop -> elimina un elemento in fondo all'array
+        //fruits.pop();
+        //document.getElementById('demo').innerHTML = fruits;
+
+        //let removed = fruits.pop();
+        //document.getElementById('demo').innerHTML = removed;   // restituisce quale elemento è stato rimosso
+
+        //******* shift -> rimuove il primo elemento di un array
+        //fruits.shift();
+        //document.getElementById('demo').innerHTML = fruits;      // rimuove il primo item di un array
+        //document.getElementById('demo').innerHTML = fruits.shift(); // restituisce il primo elemento (che è stato rimosso)
+
+        //****** unshift -> aggiunge nuovi item all'inizio dell'array
+        //fruits.unshift("limone", 'ananas');
+        //document.getElementById('demo').innerHTML = fruits;             // aggiunge nuovi elementi all'inizio dell'array
+
+        //*** slice -> aggiungere o togliere elementi in qualsiasi posizione
+        // due argomenti obbligatori + argomenti opzionali
+        // 1ò argomento obbligatorio -> la posizione da cui eliminare o aggiungere elementi
+        // 2ò argomento obbligatorio -> il numero di elementi da eliminare
+        // 3ò argomento obbligatorio -> serve a specificare gli elementi da aggiungere
+        // individua una posizione nell'array e poi o elimina (il numero specificato nel 2ò argomento) o aggiunge (terzo argomento)
+        // alla posizione 2 aggiungo 2 elementi
+
+        //fruits.splice(2, 0, 'Limone', 'Kiwi');                  // alla posizione 2 aggiungo 2 elementi
+        //document.getElementById('demo').innerHTML = fruits;
+
+        //fruits.splice(2, 2);
+        //document.getElementById('demo').innerHTML = fruits;     // alla posizione 2 elimino 2 argomenti
+
+        //****** sort -> ordina un array 
+        //document.getElementById('demo').innerHTML = fruits.sort();
+
+        //******* reverse -> ordine inverso
+        //fruits.sort();
+        //fruits.reverse();
+        //document.getElementById('demo').innerHTML = fruits;
+
+        //******* IndexOf -> cercare un elemento in un array
+        //let index = fruits.indexOf('Mela');                 // mi restituisce la posizione di un determinato elemento
+        //document.getElementById('demo').innerHTML = index;
+
+        //*** Concat -> concatenare degli array
+        //const array1 = ['Adiener', "Ruben"];
+        //const array2 = ['Chiara', "luca", "Marco"];
+        //const studenti = array1.concat(array2);
+        //document.getElementById('demo').innerHTML = studenti;
+
+        //****** join -> ci permette di ottenere una stringa dagli elementi di un array
+        // let text = fruits.join(' | ');                      // se metto un argomento modifico il separatore
+        // document.getElementById('demo').innerHTML = text;  // text restituirà una stringa
+
+        document.getElementById('demo').innerHTML = fruits.include('Mango'); // se l'array contiene un elemento 'Mango ritornerà true'
+    </script>
+</body>
+</html>

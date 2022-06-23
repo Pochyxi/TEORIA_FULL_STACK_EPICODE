@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .contenitore {
+            display: grid;
+           /* grid-template-columns: [iniz-col] 10% [col-2] 15% [col-3] auto [col-4] 15% [col-5] 10% [fine-col]; /*
+           /* grid-template-columns: 15% repeat(3, 25%) 10%; repeat: una colonna 15 + ripete 3 colonne larghe 25% + ultima 10% */
+           /* grid-template-rows: [iniz-riga] 25% [fine-riga-1 riga-2] 10% [riga-3] auto [fine-riga]; */
+           grid-template-columns: 25% 25% 25% 25%; /* fr */
+           grid-template-rows: auto;
+           grid-template-areas: 
+           "header header header header"
+           "main main main sidebar"
+           "footer footer footer sidebar";
+           grid-row-gap: 5px;
+           grid-column-gap: 15px; /* abbreviato grid-gap: 5px 15px */
+        }
+        .contenitore div {
+            padding: 30px;
+            border: 1px solid black; 
+        }
+    </style>
+</head>
+<body>
+    <div class="contenitore">
+        <div style="grid-area: header;">header</div>
+        <div style="grid-area: main;">main</div>
+        <div style="grid-area: sidebar;">sidebar</div>
+        <div style="grid-area: footer;">footer</div>
+<!--
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+-->
+    <!--
+        ****** proprietà per l'elemento contenitore *****
+        1. display: grid| inline-grid | subgrid (di blocco, inline oppure child)
+        2. grid-template-columns    -> Valore % oppure auto
+        3. grid-template-rows       -> valore % oppure auto
+        4. grid-template-areas      -> specifico il nome, se il nome si ripete l'area si espande
+
+
+        ***** proprietà per elementi child ******
+        5. justify-items: stretch | start | end | center (allinea il contenuto sull'asse verticale)
+        6. align-items: stretch | start | end | center (allinea il contenuto sull'asse verticale)
+        7. justify-content: stretch | start | end | center | space-around | space-between | space-evenly 
+                            (allineamento verticale dentro al grid)
+        8.align-content: stretch | start | end | center | space-around | space-between | space-evenly
+                            (allineamento orizzontale dentro al grid)
+        
+        **** proprietà singoli item *****
+        1. grid-column-start: 2
+        2. grid-column-end: col-5           -> grid-column: 2 / col-5
+        3. grid-row-start: iniz-riga
+        4. grid-row-end: 3                  -> grid-row: iniz-riga / 3
+        5. grid-area: lo posso assegnare anche a un singolo item
+        6. justify-self: stretch | start | end | center (allinea rispetto all'asse orizzontale)
+        7. align-self: stretch | start | end | center (allinea rispetto all'asse vertivale)
+    -->
+    </div>
+    <div style='
+    display: grid;
+    grid-template-columns: [iniz-col] 10% [col-2] 15% [col-3] auto [col-4] 15% [col-5] 10% [fin-col];
+    grid-template-rows: [iniz-rig] 25% [rig-2] 15% [rig-3] auto [fin-rig];'>
+    <div style='padding:30px; border:1px solid #000'>1</div>
+    <div style='
+        grid-column: 2 / col-5;
+        grid-row: iniz-rig / 3; padding:30px; border:1px solid #000'>2</div>
+    <div style='padding:30px; border:1px solid #000'>5</div>
+
+    <div style='padding:30px; border:1px solid #000'>6</div>
+    <div style='padding:30px; border:1px solid #000'>10</div>
+
+    <div style='padding:30px; border:1px solid #000'>11</div>
+    <div style='padding:30px; border:1px solid #000'>12</div>
+    <div style='padding:30px; border:1px solid #000'>13</div>
+    <div style='padding:30px; border:1px solid #000'>14</div>
+    <div style='padding:30px; border:1px solid #000'>15</div>
+</div>
+</body>
+</html>

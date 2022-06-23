@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document write</title>
+</head>
+<body>
+    <script>
+        // direttive di output ----- scrive qualcosa nella pagina
+        document.write('Hello World');
+        document.write('<br>');
+        document.write('Ciao Mondo');
+        document.write('<p><strong>Pippo</strong></p>');
+        document.write(3+4);      // questa non è più una stringa e quindi viene eseguita l'operazione
+
+        // inizializzare una variabile per registrare il numero del nostro giocatore
+        var numLives = 3;
+        document.write(numLives);
+        document.write("<br>"); 
+        // il nostro omino giocando perde una vita ------ ri-assegno un nuovo valore alla variabile numLives
+        numLives = 2;
+        document.write(numLives);
+        document.write('<br>');
+        // posso stampare sia variabili che testi concatenati
+        document.write('tu hai ' + numLives + ' vite ancora.');
+
+
+        ////////////////////   REGOLE DI NAMING DELLE VARIABILI /////////////////////
+        /*
+            - niente spazi
+            - deve iniziare con una lettera, _, $
+            - sono case sensitive
+            - non posso usare keywords di javascript (var, const, let, function, return, if, else, this, switch, case, true, false...)
+
+            esempio
+            var DeAmbrosis v
+            var De_Ambrosis v
+            var De Ambrosis x
+            var deAmbrosis v
+            var Deambrosis v
+            var 1DeAmbrosis x
+            var deambrosis v
+            var d-ambrosis x
+            var Deambrosis1 v
+        */
+
+    </script>
+</body>  
+</html>

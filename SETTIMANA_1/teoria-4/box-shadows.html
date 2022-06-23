@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Box shadows">
+    <title>Box shadows</title>
+    <style>
+        body {background-image: url(img/paper.jpeg);}/* background-repeat: no-repeat; */
+        /* background-size: auto -> mostra l'immagine nella dimensione originale */
+        /* background-size: cover -> fa il resize per occupare tutto il contenitore (taglia, stretchare) */
+        /* background-size: contain -> fa il resize per occupare tutto il contenitore (stretchare) */
+        #esempio1, #esempio2, #esempio3 {width: 300px; margin: 30px; padding: 10px;}
+        #esempio1 {
+            border: 1px solid #000;
+            padding: 10px;
+            box-shadow: 5px 10px;
+        }
+
+        #esempio2 {
+            border: 1px solid #000;
+            padding: 10px;
+            box-shadow: 5px 20px 10px #f00; /* se aggiungo un terzo valore è la sfocatura */
+        }
+        #esempio3 {background-image: url(img/paper.jpeg);}
+        img {width: 300px; opacity: 0.5;}
+        img:hover {opacity: 1;}
+        .firs, .second, .third, .fourth {background-color: green; padding: 10px; margin: 0; width: 200px;}
+        div.first {opacity: 0.3;}
+        div.second {opacity: 0.6;}
+        div.third {opacity: 0.8;}
+    </style>
+</head>
+<body>
+    <h2>Proprietà box shadow</h2>
+    <div id="esempio1">Un div con l'ombra. Il primo valore rappresenta lo scostamento orizzontale, il secondo quello verticale</div>
+    <div id="esempio2">Un div con l'ombra colorata. Il primo valore rappresenta lo scostamento orizzontale, il secondo quello verticale</div>
+    <h2>Background image</h2>
+    <div id="esempio3">Un div con uno sfondo, se non metto contenuto è alto 0!</div>
+    <h2>Opacità</h2>
+    <img src="img/gatto1.jpeg" alt="gatto">
+    <div class="first">Opaciti 0.3</div>
+    <div class="second">Opaciti 0.6</div>
+    <div class="third">Opaciti 0.8</div>
+    <div class="fourth">Opaciti 0.1 (default)</div>
+
+</body>
+</html>

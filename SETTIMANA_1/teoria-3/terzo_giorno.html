@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imparo i css</title>
+    <style>
+        /* qui dento vige la sintassi del css */
+        h1 {font-size: 20px; text-align: center;}
+        p{font-size: 14px;}
+        strong {color: orange;}
+        /* css incorporato, da usare in casi eccezionali */
+    </style>
+    <link rel="stylesheet" href="css/stile.css"> 
+    <!-- css esterno è il metodo raccomandato
+        dovrò collegare il foglio di stile a TUTTE le pagine html che devono essere formattate
+    -->
+</head>
+<body>
+    <h1 style="color: navy; text-align: center;">Titolo principale</h1>
+    <p>Testo della pagina con <strong style="color: orange;">elemento in evidenza</strong></p>
+    <!-- css inline è una metodologia deprecata:
+        1. è buona norma separare contenuto e formattazione
+        2. poco razionale dover intervenire su ogni riga di codice per le modifiche
+        3. il peso delle pagine aumenta
+        4. posizionamento: le keyword vengono "annacquate" in mezzo al codice
+        5. compatibilità cross device: quando avrò la media-query l'istruzione inline sarà sempre la più prossima
+    -->
+    <!-- priorità nel css 
+        1. priorità a cascata (dichiarazioni inline sono più prossime e quindi "comandano" su quelle incorporate o esterne)
+        2. priorità specifica (l'ultima dichiarazione sovrascrive la precendente)
+            p {color:blue}
+            p {color:red} -> ok
+        3. priorità gerarchica : stili inline(1000 punti) > id(100 punti) > classi(10 punti)
+
+    -->
+
+    <!--
+        id e classi
+        id -> identifica in modo univoco un elemento html -> può esserci una sola volta un particolare nome
+           -> nel css l'id viene richiamato col simbolo #
+        classi -> selezionano più elementi html
+           -> nel css la classe viene richiamata col simbolo .
+    -->
+    <h1 id="titolo_principale">Titolo con id</h1>
+    <p class="autore">Adiener Lopez Velazquez</p>
+    <p class="autore blu">Luca Trimboli</p>
+    <p class="autore">Giorgia Trigiani</p>
+</body>
+</html>

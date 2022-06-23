@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        label {width: 100px; display: block;}
+        input[type=text]:enabled {background-color: antiquewhite;}
+        input[type=text]:disabled {background-color: #ddd;}
+        input:checked {width: 50px; height: 50px;}
+        input:in-range {border: 2px solid green;}
+        input:out-of-range {border: 2px solid red;}
+        input:valid {background-color: green;}
+        input:invalid {background-color: indianred; border: 1px solid red;}
+        input:required {border: 3px solid red;}
+    </style>
+</head>
+<body>
+    <form action="#" method="#">
+        <label for="">Nome</label><input type="text" placeholder="Nome"><br>
+        <label for="">Cognome</label><input type="text" placeholder="Cognome"><br>
+        <input type="radio" value="M" name="gender">Maschio <br>
+        <input type="radio" value="F" name="gender">Femmina <br>
+        <hr>
+        <input type="radio" value="Macchina" name="mezzo">Macchina <br>
+        <input type="radio" value="Bici" name="mezzo">Bici <br>
+        <hr>
+        <input type="number" min="18" max="39" value="20"><br>
+        <input type="email" value="support@epicode.it"><br>
+        <input type="text" required><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

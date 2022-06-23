@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position sticky</title>
+    <style>/* per funzionare sticky il contenitore deve essere sibling agli altri elementi */
+        li {
+            display: inline;
+        }
+        nav.sticky {
+            position: sticky;
+            top: 0;
+            background-color: aliceblue;
+            border: 2px solid blue;
+            padding: 5px;
+        }
+        div.sticky {
+            position: sticky;
+            top: 0;
+            background-color: aliceblue;
+            border: 2px solid blue;
+            padding: 5px;
+            z-index: -1;
+        }
+        div.testo {
+            padding-bottom: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>Proviamo a scrollare per capire come funziona il positioning sticky</p>
+    </header>
+    <nav class="sticky">
+        <ul>
+            <li><a href="###">Link 1</a></li>
+            <li><a href="##">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+        </ul>
+    </nav>
+    <div class="sticky">Io sono quello sticky!</div> <!-- adesso non funziona più -->
+    <div class="testo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, officia? Atque ipsa vitae earum dolorem dolore ducimus itaque a, expedita ratione? Corporis quam vitae iure nihil laboriosam aperiam maxime nisi!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, officia? Atque ipsa vitae earum dolorem dolore ducimus itaque a, expedita ratione? Corporis quam vitae iure nihil laboriosam aperiam maxime nisi!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, officia? Atque ipsa vitae earum dolorem dolore ducimus itaque a, expedita ratione? Corporis quam vitae iure nihil laboriosam aperiam maxime nisi!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, officia? Atque ipsa vitae earum dolorem dolore ducimus itaque a, expedita ratione? Corporis quam vitae iure nihil laboriosam aperiam maxime nisi!</p>
+    </div>
+
+</body>
+</html>

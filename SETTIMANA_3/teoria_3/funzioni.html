@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzioni</title>
+    <style>
+        body{text-align: center;}
+        table {margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <h2>Operatori relazionali</h2>
+    <p>Operatori utilizzati per fare un confronto tra valori</p>
+    <table>
+        <tr><th>Operatore</th><th>Nome</th></tr>
+        <tr><td>&lt;</td><td>minore</td></tr>
+        <tr><td>&gt;</td><td>maggiore</td></tr>
+        <tr><td><=</td><td>minore o uguale</td></tr>
+        <tr><td>>=</td><td>maggiore o uguale</td></tr>
+        <tr><td>==</td><td>uguale</td></tr>
+        <tr><td>!=</td><td>diverso</td></tr>
+        <tr><td>===</td><td>strettamente uguale</td></tr>
+        <tr><td>!==</td><td>strettamente diverso</td></tr>
+    </table>
+    <p>Queste espressioni restituiscono un valore boleano</p>
+    <script>
+        4 > 2 // true
+        5 != 4 + 1 // false
+    </script>
+    <h2>Funzioni in javascript</h2>
+    <p>Una funzione è un insieme di istruzioni racchiuse in un blocco di codice, che può
+        essere contradistinto da un nome, può accettare argomenti o parametri di ingresso e restituisce valori <br>
+        Se una funzione ha un nome servirà per richiamare la funzione ed eseguirla (esistono anche funzioni anonime) <br>
+        per utilizzare una funzione in uno script mi servono <b>diverse fasi</b>.
+    </p>
+    <ol>
+        <li>Una fase in cui definiamo o dichiariamo la funzione e in cui assegnamo un nome a un blocco di codice</li>
+        <li>Una fase di invocazione o chiamata -> quella in cui il blocco di codice viene eseguito</li>
+    </ol>
+    <script>
+        // schema sintattico di una funzione
+        function nome (argomenti) {     //function è la keyword che ci dice stiamo dichiarando una funzione
+                                        // nome della funzione segue le stesse regole di naming delle variabili
+                                        // argomenti sono una lista opzionale (separati da virgole) che vengono
+                                                            // utilizzate nel corpo della funzione (cioè il blocco istruzioni)
+                                        // quando dichiariamo una funzione NON viene eseguita
+                                        // sto solo dicendo (all'engine javascript) che quel blocco di codice ha un nome
+            //istruzioni
+        }
+        nome (valori); // l'esecuzione della funzione avviene con invocazione (o chiamata)
+                        // nome è il nome della funzione
+                        // valori è una lista opzionale di espressioni (separate da virgole)
+        // i valori eventualmente inseriti nella chiamata, vengono passati (assegnati) agli argomenti della definizione
+
+        // return   -> consente di terminare e restituire un valore 
+        //          -> ad esempio possiamo assegnare a una variabile il valore restituito da una funzione
+
+        function somma() { // definito una funzione senza argomenti
+            var z = 11 + 5; // che somma due interi
+            return z;       // restituisce un risultato
+        } 
+        var risultato = somma (); // con l'invocazione eseguo la somma e assegna il risultato alla variabile
+
+        // la funzione somma() può essere utilizzata in qualsiasi espressione e viene trattata come un valore numerico
+
+        var risultato2 = 5 + somma() * 2; // 37
+
+        // argomenti o parametri di una funzione 
+
+        function somma (x, y) {
+            var z = x + y;
+            return z;
+        }
+        var risultato = somma(11, 5); // passo i valori da assegnare agli argomenti
+        var risultato1 = somma(11);      // se passo un solo valore, il secondo sarà undefined, è il risultato è NaN
+        var risultato2 = somma();        // stesso undefined
+        var risultato = somma(11, 2, 3, 4) // ignora i valori in più
+
+        // argomenti con dei valori di default (da ECMAScript 6)
+        function somma(x = 0, y = 0) {  // se al momento della chiamata non viene essegnato nessun valore -> passa valore di default
+            var z = x + y;
+            return z;
+        }
+
+        // return abbiamo detto che serve a retituire un valore (e termina anche la funzione) -> possiamo inserirla + volte
+        function decodifica(numero) {
+            switch(numero) {
+                case 'uno' : return 1;
+                case 'due' : return 2;
+                case 'tre' : return 3;
+                break;
+                default : return NaN;
+                break;
+            }
+        }
+
+        // in alcuni esempi ci sono delle variabili dichiarate all'interno del corpo di una funzione 
+        // queste variabili sono accessibili solo all'interno della funzione (non vengono viste fuori) (hanno scope locale)
+        // lo scope (ambito di visibilità) è la parte di uno script all'interno del quale si può fare riferimento ad essa
+        // le variabili dichiarate nella funzione sono locali
+        // le variabili dichiarate fuori sono globali
+        var x = 10;
+        var y;      // entrambi sono accessibili all'interno della funzione
+        function incrementa() {
+            var z = 5;
+            x = x + z; //
+        }
+        incrementa();
+        y = x + 1;      // x è 15, y è 16
+
+        // let -> lo usiamo se abbiamo bisogno di creare uno scope specifico per una o più variabili
+        // let -> limita lo scope della variabile al blocco di codice
+        var x = 10;
+        var y = x + 1;
+        {
+            let x = 20; // abbiamo uno scope a livello di blocco di codice
+                        // questa variabile x nasconde quella esterna dichiarata con var
+            y = x + 1;
+        }
+
+        // funzioni predefinite 
+        /*
+            parseInt()      -> converte una stringa in un numero intero ('3' -> 3)
+            parseFloat()    -> converte una stringa in un numero decimale ('3.14' -> 3.14)
+            isNaN()         -> prende un argomento e restituisce true se il valore è NaN, altrimenti restituisce false
+            isFinite()      -> prende un argomento e restituisce true se il valore è diverso da NaN e Infinity
+
+            eval()          -> prende come argomento una stringa, la valuta e la esegue come se fosse codice javascript
+
+        */
+       var x = eval("5 + 1");   // valuta l'espressione e assegna alla variabile x il valore 6
+       var z = eval("x + 1");   // 7
+       eval('var a = 4; a = a * 3;');
+       a = a + 1;               // eseguo due istruzioni javascript 4*3 + 1 = 13
+       // pro: potenzialità enorme -> ho a disposizione un vero e proprio interprete javascript
+       // contro: risultati incontrollabili -> eval is evil 
+       // in linea di massima impareremo ad evitare di utilizzare eval, pero per le conoscenze
+       // che abbiamo per ora può aiutarci a venire a capo di diversi problemi
+       // eval non è disponibile in modalità strict mode
+
+       // i nomi delle funzioni in javascript non sono riservati
+       // se io chiamo una funzione parseInt() il mio codice andrà a sovrascrivere il comportamento di default
+
+       // funzioni a freccia (novità introdotta da ES6)
+       function square(x) {
+           return x * x;        
+       }
+       // possiamo anche assegnare una funzione a una variabile
+       var square = function(x) {
+           return x * x;
+       }
+       // la sintassi delle funzioni a freccia 
+       x => {return x * x;}
+       x => x * x;      // x è il parametro -> il parametro viene spostato a sinistra della freccia
+       () => {}         // non ci sono parametri
+       (x) => {}        // c'è un parametro
+       (x, y) => {}     // ci sono molti parametri
+       //function non serve è sostituito dalla =>
+       // le parentesi tondo racchiudono i parametri
+       // posso anche mettere le parentesi {} rendendole implicite
+       // pro: il codice è molto più stringato | contro: tante volte è meno leggibile
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direttive Output</title>
+</head>
+<body>
+    <!-- Inner Html -->
+    <p>Posso selezionare un paragrafo e modificare / inserire il contenuto</p>
+    <p id="demo">pippo</p>
+    <script>
+        document.getElementById("demo").innerHTML = "pluto";
+    </script>
+    <!-- document write -->
+    <p>Posso stampare a video contenuti o variabili (o entrambe)</p>
+    <script>
+        document.write(5+6);
+    </script>
+    <!-- window alert o alert -->
+    <p>Posso stampare qualcosa in un popUp</p>
+    <script>
+        window.alert(5 + 6);
+        alert(5 + 6);           // metodo alternativo
+    </script>
+
+    <!-- console log -->
+    <p>Uso la console principalmente quando voglio fare debug (controllare il flusso del codice)</p>
+    <script>
+        console.log(5 + 6);         // lo vedo solo nello strumento di debug del browser (tasto destro --- console )
+    </script>
+
+    <!-- window.print (altro metodo dell'oggetto window ) -->
+    <button onclick="window.print()"> Stampa questa pagina</button>
+</body>
+</html>

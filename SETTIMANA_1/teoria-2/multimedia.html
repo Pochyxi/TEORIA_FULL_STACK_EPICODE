@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia</title>
+</head>
+<body>
+    <!-- audio -->
+    <!--
+    <audio>
+        <source src="audio/heartbeat.mp3" type="audio/mp3" controls>
+        # lo uso se ho più formati
+    </audio>
+    -->
+    <audio src="audio/heartbeat.mp3" controls></audio><!-- controls fondamentale per fare apparire i comandi -->
+    <!-- attributi: autoplay -> parte in automatico (ma ormai è quasi impossibile ) 
+                    controls -> mostra i pulsanti di controllo
+                    loop     -> esegue l'audio in loop
+                    muted    -> muta l'audio
+                    src      -> percorso del file (fondamentale)
+        formati: mp3, wav, ogg (Su Safari .ogg non è supportato)
+    -->
+    <br>
+    <!-- video -->
+    <video src="video/by_night.mp4" controls width="300" poster="../giorno-1/img/biden.jpeg"></video>
+    <!-- 
+        attributi: autoplay -> parte in automatico (ma ormai è quasi impossibile ) 
+                    controls -> mostra i pulsanti di controllo
+                    loop     -> esegue l'audio in loop
+                    muted    -> muta l'audio
+                    src      -> percorso del file (fondamentale)
+                    width    -> larghezza del player
+                    height   -> altezza del player
+                    poster   -> inserire immagine di copertina
+    -->
+    <br>
+    <!-- picture -->
+    <picture>
+        <source media="(min-width:1024px)" srcset="immagine_grande.jpg">
+        <source media="(min-width:768px)" srcset="immagine_media.jpg">
+        <img src="immagine_piccola.jpg" width="" height="" alt="Logo">
+    </picture>
+    <br>
+    <!-- incorporare siti terzi -->
+    <!-- google maps -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.3029945291387!2d9.18840545091046!3d45.463699978998484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6ae939351df%3A0xd445dec2978d0e3f!2sP.za%20del%20Duomo%2C%20Milano%20MI!5e0!3m2!1sit!2sit!4v1653386245461!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- youtube -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/etmSWkeRYbk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>

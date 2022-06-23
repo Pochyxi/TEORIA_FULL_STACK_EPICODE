@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex_ripasso</title>
+    <style>
+        * {box-sizing: border-box;}
+        body {margin: 0;}
+        header, footer, nav, article, aside {padding: 1em;}
+        header, footer {
+            background-color: yellowgreen;
+            height: 20vh;
+        }
+        #main {min-height: calc(100vh - 40vh);}
+        .card img {
+                width: 100%;
+                max-width: 100%;
+            }
+        @media screen and (min-width:768px) {
+            #main {
+                display: flex;
+                flex: 1;
+            }
+            #main > article {flex: 1;}
+            #main > nav, #main > aside {
+                flex: 0 0 20vw;
+                background: beige;
+            }
+            #main article {
+                display: flex;
+                flex-wrap: wrap;
+                flex: 1;
+            }
+            .card {
+                flex: 0 0 50%;
+                max-width: 100%;
+            }
+            .card img {
+                max-width: 100%;
+            }
+        }
+        @media screen and (min-width:1024px) {
+            .card {flex: 0 0 25%;}
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        header
+    </header>
+    <div id="main">
+        <nav>Nav</nav>
+        <article>
+            <!-- CARD 1 -->
+            <div class="card">
+                <img src="pix/24m.jpeg" alt="Sample photo">
+                <div class="text">
+                  <h3>Completely Synergize</h3>
+                  <p>Dramatically engage seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing.</p>
+                  <button>Here's how</button>
+                </div>
+              </div>
+              <!-- CARD 2 -->
+            <div class="card">
+                <img src="pix/24m.jpeg" alt="Sample photo">
+                <div class="text">
+                  <h3>Completely Synergize</h3>
+                  <p>Dramatically engage seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing.</p>
+                  <button>Here's how</button>
+                </div>
+              </div>
+              <!-- CARD 3 -->
+            <div class="card">
+                <img src="pix/24m.jpeg" alt="Sample photo">
+                <div class="text">
+                  <h3>Completely Synergize</h3>
+                  <p>Dramatically engage seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing.</p>
+                  <button>Here's how</button>
+                </div>
+              </div> 
+              <!-- CARD 4 -->
+            <div class="card">
+                <img src="pix/24m.jpeg" alt="Sample photo">
+                <div class="text">
+                  <h3>Completely Synergize</h3>
+                  <p>Dramatically engage seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing.</p>
+                  <button>Here's how</button>
+                </div>
+              </div>            
+        </article>
+        <aside>Aside</aside>
+    </div>
+    <footer>
+        footer
+    </footer>
+</body>
+</html>

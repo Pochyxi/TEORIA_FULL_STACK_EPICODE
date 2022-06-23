@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        div.ex1, div.ex2, div.ex3, div.ex4 {background-color: aquamarine; width: 110px; height: 110px;}
+        div.ex1 { overflow: scroll;} /* aggiungi la scroll */
+        div.ex2 {overflow: hidden;} /* nascondi il testo che eccede */
+        div.ex3 {overflow: auto;} /* aggiungi scroll solo se necessario*/
+        div.ex4 {overflow: visible;} /* il testo che eccede è visibile */
+        /* Word-break */
+        p { width: 120px; border: 1px solid black}
+        .uno {word-break: normal;} /* la parola eccede il contenitore */
+        .due {word-break: keep-all;} /* vado a capo solo coi trattini */
+        .tre { word-break: break-all;}/* vado a capo sempre */
+        /* word-wrap -> word-wrap: normal (default) non spezza la parola */
+    </style>
+</head>
+<body>
+    <h1>Proprietà Overflow</h1>
+    <h2>Overflow scroll</h2>
+    <div class="ex1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio delectus quod libero eos ab possimus amet modi ad, porro totam expedita blanditiis facere at minus harum ratione, corporis culpa. Maxime?
+    </div>
+    <h2>Overflow Hidden</h2>
+    <div class="ex2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit consectetur, quos esse rem dicta blanditiis ut saepe aperiam voluptates dolores quisquam rerum facere omnis minima vero illo similique architecto a?
+    </div>
+    <h2>Overflow auto</h2>
+    <div class="ex3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, ab. Praesentium cupiditate fuga eos a, aliquid quam, hic dolorem doloribus ratione nobis at, nulla dolores non deleniti magni quod neque.
+    </div>
+    <h2>Overflow visible</h2>
+    <div class="ex4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facilis modi quaerat, recusandae blanditiis expedita ipsa ex ea officia maxime, a doloremque officiis dolores earum sit perferendis? Officia, voluptas molestiae?
+    </div>
+    <h1>Word-break</h1>
+    <p class="uno">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur qui excepturi delectus! Perferendis aliquam quo totam nemo vero reiciendis doloribus, laudantium voluptatem quod, inventore eaque aspernatur veniam optio veritatis nostrum?</p>
+    <p class="due">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur qui excepturi delectus! Perferendis aliquam quo totam nemo vero reiciendis doloribus, laudantium voluptatem quod, inventore eaque aspernatur veniam optio veritatis nostrum?</p>
+    <p class="tre">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur qui excepturi delectus! Perferendis aliquam quo totam nemo vero reiciendis doloribus, laudantium voluptatem quod, inventore eaque aspernatur veniam optio veritatis nostrum?</p>
+</body>
+</html>

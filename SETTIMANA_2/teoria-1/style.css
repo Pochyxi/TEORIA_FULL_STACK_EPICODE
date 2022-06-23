@@ -1,0 +1,71 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 63%;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
+#contenitore {
+    width: 100%; /* default */
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+/* tipografie */
+header h1 {font-size: 2rem;}
+header h2 {font-size: 1.5rem;}
+p, a, li {font-size: 1rem;}
+figcaption {font-size: 0.9rem;}
+
+/* header */
+header {background-color: aliceblue; padding: 1rem;}
+
+/* nav */
+nav {background-color: azure; height: 2.5rem;}
+nav ul {list-style: none; margin: 0; padding: 0;}
+nav li {float: left; padding-top: 15px;}
+nav a {text-decoration: none; padding: 5px 20px;}
+
+/* articoli */
+article { 
+    width: 100%; 
+    float: left;
+    background-color: #fff;
+}
+article div {padding: 10px;}
+article img {max-width: 100%;}
+
+/* footer */
+footer {background-color: aliceblue; padding: 1rem;}
+footer p {text-align: center; line-height: 2rem;}
+
+/************* Media Queries ********/
+
+@media screen and (min-width:480px) {
+    body {font-size: 70%;}
+    #contenitore {width: 450px;}
+    /* posso modificare font-size, padding, margin */
+}
+
+@media screen and (min-width:768px) {
+    body {font-size: 80%;}
+    #contenitore {width: 740px;}
+    article {width: 50%;}
+    /* posso modificare font-size, padding, margin */
+
+}
+
+@media screen and (min-width:1024px) {
+    body {font-size: 90%;}
+    #contenitore {width: 980px;}
+    article {width: 33.33%;} 
+    /* posso modificare font-size, padding, margin */
+
+}
+
+@media screen and (min-width:1200px) {
+    body {font-size: 100%;}
+    #contenitore {width: 1160px;}
+    /* posso modificare font-size, padding, margin */
+
+}

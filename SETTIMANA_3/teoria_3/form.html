@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .myForm {
+            background-color: beige;
+            border-radius: 3px;
+            padding: 1em;
+        }
+        .column {
+            padding: 1em;
+        }
+        @media screen and (min-width: 768px) {
+            .row {
+                display: flex;
+                justify-content: center;
+            }
+        }
+        .input-group {
+            display: flex;
+        }
+        .input-group > label {
+            margin-right: 1em;
+            padding: .5em 0;
+        }
+        .myForm input,
+        .myForm select {
+            flex: 1;
+            padding: .5em;
+            margin-bottom: 1em;
+        }
+        .myForm button {
+            padding: 1em;
+            background: gray;
+            color: white;
+            border: 0;
+        }
+        .myForm fieldset {
+            border: 0;
+        }
+        .taxi > label,
+        .extras > label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form action="" class="myForm">
+    <div class="row">
+        <div class="column">
+            <div class="input-group">
+                <label for="costumer_name">Name</label>
+                <input type="text" id="costumer_name">
+            </div>
+            <div class="input-group">
+                <label for="phone_number">Phone</label>
+                <input type="tel" id="phone_number">
+            </div>
+            <div class="input-group">
+                <label for="email_address">Email</label>
+                <input type="email" id="email_address">
+            </div>
+            <div class="input-group">
+                <label for="time">Date/Time</label>
+                <input type="datetime-local" id="time">
+            </div>
+            <div class="input-group">
+                <label for="place">Place</label>
+                <select name="" id="place">
+                    <option value=""></option>
+                    <option value="Office">Office</option>
+                    <option value="Town">Town</option>
+                    <option value="Airport">Airport</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="dropoff">Dropoff</label>
+                <input type="text" id="dropoff" list="destinations">
+                <datalist id="destinations">
+                    <option value="Beach">
+                    <option value="Bar">
+                    <option value="Restaurant">
+                </datalist>
+            </div>
+        </div>
+        <div class="column">
+            <fieldset class="taxi">
+                <legend>Witch taxi do you require?</legend>
+                <label><input type="radio" id="taxi_car" name="taxi" value="car">Car</label>
+                <label><input type="radio" id="taxi_van" name="taxi" value="van">Van</label>
+                <label><input type="radio" id="taxi_tuk" name="taxi" value="tuktuk">Tuk tuk</label>
+            </fieldset>
+
+            <fieldset class="extras">
+                <legend>Witch taxi do you require?</legend>
+                <label><input type="checkbox" id="extra_baby" value="car">Baby seat</label>
+                <label><input type="checkbox" id="extra_wheel" value="van">Wheelchair</label>
+                <label><input type="checkbox" id="extra_tip" value="tuktuk">No tip</label>
+            </fieldset>
+        </div>
+    </div>
+    <div class="row">
+        <input type="text" id="risultato"> <!-- stampo nel value di id risultato -->
+        <button type="button" onclick="prendoDato(this.id)" id="valore" value="Valore">Submit booking</button>
+        <!-- <input type="submit" onclick="prendoDato(this.id)" id="valore"> --> <!-- non funziona perchè type submit ricarica la pagina -->
+    </div>
+</form>
+<script>
+    function prendoDato(dato) {
+        document.getElementById('risultato').value += dato; // += addition assignment
+        // aggiunge il valore (dell'operando di destra) 
+    }
+</script>
+</body>
+</html>

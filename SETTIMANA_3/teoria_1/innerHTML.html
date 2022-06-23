@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner html</title>
+</head>
+<body>
+    <h1>Inizio a studiare Javascript</h1>
+    <p>Imparo la direttiva inner Html: posso inserire valore numerici o stringhe di testo</p>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <script>
+        document.getElementById('demo').innerHTML = 5 + 6
+        document.getElementById('demo2').innerHTML = 'pippo'
+    </script>
+    <p>Posso inserire anche variabili</p>
+    <p id="myP">Io sono un paragrafo</p>
+    <p>Il contenuto di "myP" è:</p>
+    <p id="Demo3"></p>
+    <script>
+        var html = document.getElementById('myP').innerHTML; // assegno alla variabile html il contenuto di myP
+        document.getElementById('Demo3').innerHTML = html;  // uso la variabile per stampare dentro a demo3
+    </script>
+</body>
+</html>

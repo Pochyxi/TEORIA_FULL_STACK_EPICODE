@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operatori</title>
+    <style>
+        body {text-align: center;background-color: wheat; font-size: 1.5rem;}
+        h1, h2, h3 {
+            color: red;
+            font-family:sans-serif;
+        }
+        b {
+            color: rgb(50, 50, 205);
+        }
+        p {
+            background-color: whitesmoke;
+            border: 5px outset black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>OPERATORI</h1>
+    <p>Un espressione è una combinazione di valori, variabili e operatori che rappresentano un nuovo valore.</p>
+    <script>
+        x + 1   // è un'espressione che combina la variabile x con il valore 1 tramite l'operatore +
+                // ottiene l'incremento di un'unità di x
+    </script>
+    <p>Gli operatori determinano il risultato di un'espressione</p>
+    <p>Classifichiamo gli operatori in base al numero di valori che possono combinare: unari, binari, ternari</p>
+    <h2>Operatori aritmetici</h2>
+    <p>Operatori binari che combinano valori numerici. <br>
+        + è l'addizione <br>
+        - è sottrazione <br>
+        / divisione <br>
+        * moltiplicazione <br>
+        % modulo o resto <br>
+        esempi: <br>
+        9/4 <br>
+        x +10 <br>
+        Seguono le regole di precedenza matematiche e come in matematica posso usare le parentesi ma solo le () <br>
+        4 + 5 * 6 + 7 = 41 (precedenza alle moltiplicazioni) <br>
+        (4 + 5) * (6 + 7) = 117 
+    </p>
+    <p>Operatori aritmetici possono anche essere unari <br>
+        ++ incremento <br>
+        -- decremento <br>
+        - negazione -> x=5 -> -x = -5 <br>
+
+        incremento e decremento li posso applicare solo a delle variabili <br>
+        -> è molto importante la posizione dell'operatore <br>
+        -> se l'operatore è a sinistra (dell'operando) l'operazione viene eseguita prima di valutare l'espressione <br>
+        -> se l'operatore è a destra (dell'operando) l'operazione viene eseguita dopo</p>
+        <script>
+            var x = 3;
+            var y = ++x;    // a sx -> valuto prima -> x viene incrementata di 1 e il risultato assegnato a y
+                            // x=4 e y=4
+            var x = 3;
+            var y = 4;      // a dx -> valuto dopo -> x viene assegnata a y e solo dopo incrementata
+                            // x=4 e y=3
+        </script>
+        <h3>Operatori logici</h3>
+        <p>Consentono di combinare espressioni booleane (true) (false) <br>
+            && -> operatore binario -> and <br>
+            || -> operatore binario -> or <br>
+            !  -> operatore unario -> not <br>
+            5 > 2 && 3 !=4 // true <br>
+            !5 === 5        // false <br>
+                                        <br>
+            =   -> assegnato <br>
+            ==  -> uguale <br>
+            !=  -> diverso <br>
+            === -> strettamente uguale <br>
+                (uguale sia il valore che il tipo di dato) <br>
+                -> es 0 e "0" non sono strettamente uguali (è uguale il valore ma non il tipo)</p>
+        <h3>Operatore ? per assegnamenti condizionali</h3>
+        <p>E' l'unico peratore ternario presente in javascript. Restituisce un valore in base a una espressione booleana</p>
+        <p>Sintassi: condizione ? valore1 : valore2 <br>
+            verifico se la condizione è vera (true|false) -> se è vera viene restituito il valore 1 altrimenti il valore 2</p>
+        <script>
+            x%2 === 0 ? "pari" : "dispari"; // verifico che x sia multiplo di 2 (se divido 2 non c'è resto)
+                                            // se la condizione è true restituisce il primo valore dopo ?
+                                            // altrimenti (false) restituisce il secondo valore (quello dopo : )
+        </script>
+    
+        <h3>Operatori su stringhe</h3>
+        <p>operatore concatenazione (+) -> crea una nuova stringa come risultato della concatenazione di due stringhe</p>
+        <script>
+            "piano" + "forte" // "pianoforte"
+            // forma compatta
+            var strumento = "piano"
+            strumento += "forte"; // strumento = "pianoforte"
+        </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- user-scalable possiamo decidere se consentire all'utente di zoomare la pagina -->
+    <!-- inizial scale imposta il fattore di zoom iniziale (quando la pagina viene caricata) -->
+    <!-- mimnimum e maximum scale ci dicono quanto posso zoomare -->
+    <title>Breackpoint</title>
+    <style type="text/css">
+        body {background: red; }                  /* mobile first -> smartphone in  modalita potrait */
+        @media screen and (min-width:480px) {       /* smartphone in modalita landscape*/
+          body {
+              background: yellow;
+          }  
+        }
+        @media screen and (min-width: 768px) {      /* tablet */
+          body {
+              background: green;
+          }  
+        }
+        @media screen and (min-width: 1024px) {     /* laptop */
+          body {
+              background: blue;
+          }  
+        }
+        @media screen and (min-width: 1200px) {     /* desktop */
+          body {
+              background: black;
+          }  
+        }
+    </style>
+</head>
+<body>
+    <p>ciao</p>
+</body>
+</html>

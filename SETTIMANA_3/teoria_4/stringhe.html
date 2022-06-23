@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stringhe</title>
+</head>
+<body>
+    <p>Le stringhe hanno un corrispondente oggetto predefinito che prevede i metodi per la manipolazione delle stringhe.</p>
+    <p id="demo"></p>
+    <!-- <p id="demo2">Visit Italy!</p> -->
+    <script>
+
+       // var x = new String('Una nuova stringa');            // con l'operatore new possiamo creare istanze di oggetti string
+       // var y = x + "concatenata"                           // js si occupa di fare in automatico le opportune conversioni tra tipi di dato
+                                                            // l'oggetto x viene convertito nella stringa prima di effettuare la cocatenazione con +
+
+        let text = 'Hello World!';
+
+        // **** length -> restituisce la lunghezza di una stringa
+        //let length = text.length;
+        //document.getElementById('demo').innerHTML = length;     // conta i caratteri e restituisce la lunghezza della stringa
+
+        //***** charAt() -> restituisce un carattere presente in una posizione specifica
+        //let letter = text.charAt(0);
+        //document.getElementById('demo').innerHTML = letter;
+        
+        //***** replace() -> sostituisce uno o più caratteri in una stringa 
+        // prevede due argomenti: 1. la sottostringa da cercare e la nuova stringa con cui sostituire 
+        // let text2 = document.getElementById('demo2').innerHTML;
+        // document.getElementById('demo2').innerHTML = text2.replace('Italy', 'Greece');
+
+        //***** indexOf -> ci permette di individuare una sottostringa all'interno di una stringa
+        //let result = text.indexOf('world');                     // restituisce la posizione della prima occorrenza che viene trovata
+        //document.getElementById('demo').innerHTML = result;     // se non c'è corrispondenza restituisce -1
+        // lastIndexOf -> restituisce la posizione dell'ultima occorrenza
+
+        //****** substr() -> estrae una parte di una stringa di un certo numeri di caratteri a partire da una certa posizione
+        // due argomenti: 1. posizione da dove estrarre 2. numero di caratteri da estrarre
+        // secondo argomento è opzionale, se non metto niente estrae tutto a partire dalla posizione del primo argomento
+        //let result = text.substr(1, 4);
+        //document.getElementById('demo').innerHTML = result;
+
+        //******* substring() -> estrae una parte di una stringa compresa tra due posizioni
+        //let result = text.substring(1, 4);                          // due argomenti: 1.posizione iniziale 2. posizione finale
+        //document.getElementById('demo').innerHTML = result;
+
+        //**** slice() -> estrae una parte di una stringa compresa tra due posizioni
+        // let result = text.slice(0, 5);                          // due argomenti: 1.posizione iniziale 2. posizione finale
+        // document.getElementById('demo').innerHTML = result;
+        // differenza tra substring e slice: 
+        // -> in substring se il primo parametro è maggiore del secondo javascript li scambia
+        // .substring(4, 9) .substring(9, 4) restituisce lo stesso risultato
+        // -> in substring se c'è un valore negativo viene trattato come zero
+        // .substring (4, -2) -> scambia gli argomenti -> .substring (0, 4)
+
+        // -> in slice se il primo parametro è maggiore del secondo restituisce stringa vuota
+        // .slice(4, -2) -> restituisce una sottostringa che inizia alla posizione 4 e finisce 2 caratteri prima della stringa
+
+        //***** split(); -> crea un array a partire da una stringa 
+        //const myArray = text.split(' ');                    // uso come separatore lo spazio bianco                     
+        //document.getElementById('demo').innerHTML = myArray;
+        //.split('') farà un'array dei singoli caratteri
+        //.split('', 5) -> secondo argomento indico il numero di elementi che deve contenere l'array
+        //quelli in più saranno ignorati
+
+        //****** toUpperCase() -> converte una stringa in caratteri maiuscoli
+        let result = text.toUpperCase();
+        document.getElementById('demo').innerHTML = result;
+        // toLowerCase()       -> converte una stringa in caratteri minuscoli
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <table><!-- table è il tag parent: tutta la mia tabella deve compresa tra l'apertura e la chiusura di questo tag -->
+        <caption>Presenze classe Full Stack 02-03</caption><!-- intestazione della tabella -->
+        <tr><!-- tr table row indica la riga di una tabella, è elemento child di table -->
+            <th>Nome</th><!-- th table head indica le celle della prima riga -->
+            <th>data</th>
+            <th>Presente</th>
+        </tr>
+        <tr>
+            <td>Adiener</td><!-- td table data indica la singola cella, è elemento child di tr -->
+            <td>24-05</td>
+            <td>si</td>
+        </tr>
+        <tr>
+            <td>Giorgia</td><!-- !in ogni riga c'è lo stesso numero di celle -->
+            <td>24-05</td>
+            <td>si</td>
+        </tr>
+        <tr>
+            <td colspan="3">Totale 19 presenti</td><!-- colspan unisce le colonne (quindi in orizzontale) -->
+                                                   <!-- rowspan unisce le righe (quindi in verticale) --> 
+        </tr>
+    </table>
+    <!-- 
+         per tabelle di grandi dimensioni inserisco nuovi tag: 
+         thead -> intestazione della tabella
+         tbody -> corpo della tabella
+         tfoot -> piè pagina della tabella
+    -->
+    <table>
+        <thead>
+            <tr>
+                <th>Competenza</th>
+                <th>Livello</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Html</td>
+                <td>Genietto</td>
+            </tr>
+            <tr>
+                <td>Css</td>
+                <td>Buono</td>
+            </tr>
+            <tr>
+                <td>Javascript</td>
+                <td>Così Così</td>
+            </tr>
+            <tr>
+                <td>Php</td>
+                <td>Scarso</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!--
+                <td>Livello medio</td>
+                <td>Buono</td>
+                -->
+                <td colspan="2">Livello medio: buono</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

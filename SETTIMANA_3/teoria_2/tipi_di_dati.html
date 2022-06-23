@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipi di dati</title>
+    <style>
+        body {text-align: center;background-color: wheat; font-size: 1.5rem;}
+        h1, h2, h3 {
+            color: red;
+            font-family:sans-serif;
+        }
+        b {
+            color: rgb(50, 50, 205);
+        }
+        p {
+            background-color: whitesmoke;
+            border: 5px outset black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tipi di dati</h2>
+    <p>Javascript prevede 5 tipi di dati <b>primitivi</b>: numeri, stringhe, booleani, null e undefined
+         e un tipo di dato <b>complesso</b>, gli oggetti.</p>
+    <p>Gli altri elementi previsti dal linguaggio array, funzioni etc sono in realta oggetti.</p>
+    <p>Negli oggetti ci possono essere proprietà (attributo/valore) e/o dei metodi (funzioni).</p>
+    <p>A dire il vero anche i tipi di dato primitivi hanno degli oggetti corrispondenti con relative proprietà e metodi</p>
+    <script>
+        var nomeMaiuscolo = 'federico'.toUpperCase(); //a partire dal tipo di dato primitivo stringa
+        // si crea un oggetto che invoca il metodo toUpperCase() -> ottiene la stringa ma in caratteri maiuscoli
+    </script>
+    <h3>Tipo di dato stringa</h3>
+    <p>è una sequenza di caratteri delimitata da apici doppi o singoli. <br>
+        "questa è una stringa" - 'questa è una stringa' -> non c'è regola per quale delimitatore usare. <br>
+        Unica regola: delimitatore iniziale deve essere uguale a quello finale  <br>
+        "l'altro ieri" - "questa è una 'stringa'" <br>
+        Esiste anche la stringa vuota "" oppure '' <br>
+        per inserire caratteri speciali in una stringa -> \ <br>
+        "Ieri c'era il sole. \nOggi piove" -> /n inserisce un ritorno a capo <br>
+        'l\'altro ieri' - "questa è una \"stringa\"" -> il delimitatore preceduto da \ viene considerato come un carattere normale</p>
+        <h3>Tipo di dato numerico</h3>
+        <p>Esiste un unico tipo di dato, non c'è distinzione tra intero e decimale.</p>
+        <script>
+            var interoNegativo = -10; //niente apici! nè doppi nè singoli
+            var zero = 0;
+            var interoPositivo = 123;
+            var numeroDecimale = 0.54; // il punto fa da separatore per la parte decimale
+            var altroDecimale = 12.34;
+            var decimaleNegativo = -1.1;
+            // NaN not a number -> è un valore speciale che indica un valore numerico non definito
+            var x = x + 1; // NaN
+        </script>
+        <h3>Tipo di dato booleano</h3>
+        <p>Ha due soli valori possibili: true | false</p>
+        <h3>Tipo di dato null</h3>
+        <p>Prevede un solo valore: null -> non rientra tra i tipi di dato -> non è una stringa, nè un numero, non è booleano,
+            non è un oggetto.</p>
+        <script>
+            var x = null // null è diverso da 0, è diverso da stringa vuota
+        </script>
+        <h3>Tipo di dato undefined</h3>
+        <p>Prevede un solo valore: undefined. Rappresenta un valore che non esiste. Non ha assegnato nessun valore nemmeno null</p>
+        <h3>Tipizzazione debole o dinamica</h3>
+        <p>Quando dichiariamo una variabile non specifichiamo il tipo di dato ->
+            il tipo di dato può cambiare durante l'esecuzione di uno script.
+        </p>
+        <script>
+            var miaVariabile; // undefined
+            var miaVariabile = 1;
+            var miaVariabile = null;
+            var miaVariabile = "pippo";
+            var miaVariabile = true;
+        </script>
+        <h3>Template string</h3>
+        <p>sintassi avanzata (introdotta da ECMAScript 2015) per comporre stringhe complesse</p>
+        <script>
+            var messaggio = "Attenzione!\nIl valore inserito" + valore + "non è valido perchè deve essere prompreso tra " + valore_iniziale
+            // compongo il messaggio concatenando stringhe + variabili \n ritorni a capo
+            // template string -> sequenza di caratteri delimitata dal'apice inverso ``
+            var messaggio = `Attenzione!
+            Il valore inserito ${valore} non è valido perchè deve essere compreso tra ${valore_iniziale} e ${valore_finale}.
+            Si prega di riprovare `;  // gli a capo inseriti in un template string vengono mantenuti
+        </script>
+</body>
+</html>

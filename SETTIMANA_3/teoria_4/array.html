@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gli array</title>
+</head>
+<body>
+    <p>Gli array sono liste di oggetti in cui salvare dati anche di diverso tipo. Gli array ci consentono di associare più valori ad un unico nome di variabile. L'uso degli array evita di definire più variabili e semplifica lo svolgimento di operazioni</p>
+    <script>
+        var giorniDellaSettimana = [    // gli array sono delimitati da parentesi quadre
+            'Lunedi',                   // i singoli elementi sono separati da virgole   
+            'Martedi',
+            'Mercoledi',                // rappresentazione letterale
+            'Giovedi',
+            'Venerdi',
+            'Sabato',
+            'Domenica',
+        ];
+        // per accedere all'array faccio riferimento al nome della variabile e all'indice corrispondente dell'elemento
+        
+        var primoGiorno = giorniDellaSettimana[0]; // la numerazione degli indici parte da 0!
+        var terzoGiorno = giorniDellaSettimana[2];
+        var settimoGiorno = giorniDellaSettimana[6];
+        var myArray = [];                           // un array può essere vuoto
+        var myArray = [, 'elemento'];               // un array con due elementi in cui il primo è undefined
+        var myArray = ['elemento', 'altroElemento',]; // un array con due elementi (la virgola finale viene ignorata)
+        var myArray = [123, 'stringa', true, null];  // un array può contenere qualunque tipo di dato
+        var myArray = [123, 'stringa', ['a', 'b']];  // un array può contenere un'altro array
+        var b = myArray[2] [1];                      // accedo prima al tero elemento dell'array principale e poi al secondo
+        var matrice = [[24, 13, 1], [48, 92, 17], [8, 56, 11]];     // array multidimensionali
+        var quarantotto = matrice [1] [0];                      // accedo dando le cordinate (posizione principale + secondaria)
+
+        // possiamo (da ECMAScript 6) assegnare contemporaneamente a più variabili i valori di un array -> destrutturazione dell'assegnamento
+        var [primoGiorno, terzoGiorno, settimoGiorno] = giorniDellaSettimana;
+
+        // creare un array sfruttando un oggetto omonimo Array
+        var x = new Array();                 // ho creato un array vuoto sfruttando il costruttore new e l'oggetto built-in Array
+        var x = new Array(5);                // ho creato un array di 5 elementi (tutti undefined) | 1 argomento
+        var x = new Array(3, 5, 'testo', true); // ho creato un array composto dagli elementi che ho elencato | + argomenti
+
+        // proprietà degli array 
+        // lenght -> indica il numero di elementi contenuti -> modificando length posso andare a modificare la dimensione di un array
+        var x = new Array(); x.length = 10;     // creo un array vuoto e poi aggiungo 10 elementi
+        var x = new Array('uno', 'due', 'tre');
+        x.length = 5;                           // ['uno', 'due', 'tre', undefined, undefined]
+        x.length = 2;                           // ['uno', 'due']
+    </script>
+</body>
+</html>

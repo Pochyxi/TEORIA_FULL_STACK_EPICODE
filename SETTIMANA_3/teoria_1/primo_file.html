@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primo file JS</title>
+</head>
+<body>
+    <h1>Oggetto console</h1>
+    <p>L'oggetto console, insieme a editor e browser è fondamentale per scrivere codice javascript</p>
+    <p>E' uno degli strumenti fondamentali (insieme all'editor e al compilatore) per scrivere qualsiasi linguaggio di programmazione</p>
+    <p>Ci permette infatti di fare il debug, il controllo, del flusso del nostro codice</p>
+    <h2>Inserire codice javascript in una pagina html</h2>
+    <ul>
+        <li>a) importare file con codice javascript esterno (consigliato)</li>
+        <li>b) scrivere blocchi di codice nella pagina</li>
+        <li>c) inserire codice inline</li>
+    </ul>
+    <p>Spesso la console si usa per tenere traccia dell'evoluzione del programma o per verificare i valori</p>
+    <script>
+       // console.log('ciao mondo');
+       var a = 'pippo';             
+       console.log('a = ' +a) // a = pippo
+    </script>
+
+
+    <h2>Inserire codice inline</h2>
+    <p>Posso inserire direttamente le istruzioni javascript nel codice di un elemento html, assegnandolo ad un attributo che rappresenta un evento</p>
+    <button type="button" onclick="alert('Ciao')">Cliccami</button>
+    <!--
+        abbiamo assegnato all'attributo onclick dell'elemento button la stringa alert('ciao')
+        l'attributo onclick rappesenta l'evento del clic sul pulsante del mouse
+        quindi in corrispondenza di questo evento viene analizzato il codice che javascript assegnato in questo alert mostra un box con la scritta Ciao!
+    -->
+    <p>Altro approccio per inserire codice inline, ma è valido solo per i link:</p>
+    <a href="javascript:alert('Ciao')">Cliccami!</a>
+    <!--
+        in questo caso indichiamo al browser di interpretare il link come la richiesta di esecuzione
+        del codice javascript specificato (anzichè un collegamento ad un'altra finestra)
+    -->
+    <h2>Inserisco blocchi di codice</h2>
+    <p><strong>Pro</strong>: risulta immediato quando dobbiamo mettere in relazione codice da eseguire con un elemento html</p>
+    <p><strong>Contro</strong>: in caso di codice minimamente complesso (variabili, funzioni, console) non risulta comodo</p>
+    <script>alert('ciao')</script>
+    <!-- il parser htm del browser esamina la pagina, riconosce il tag script e passa il contenuto all'engine js che lo esegue -->
+    <p><code>tag head e tag body?</code> se il codice js interagisce con un elemento HTML ... essere sicuri che l'elemento è già parsato <br>
+    così l'elemento sarà già disponibile in memoria ... questo spiega perchè a volte troviamo gli script prima della chiusura di body </p>
+    <h2>Inserisco javascript esterno</h2>
+    <p>Approccio più consigliato. Consiste nel collegare una pagina HTML con uno script presente in un file esterno. <br>
+    Il grande vantaggio è la separazione tra struttura del documento e codice, tra cos'è un tag e cosa deve fare</p>
+    <script src="js/primo-file-js.js"></script>
+    <script src="https://"></script>  
+
+    <!----------------------------- aspetti sintattici fondamentali ------------------>
+
+    <h2>Aspetti sintatti fondamentali</h2>
+    <p>Il codice javascript è una sequenza di istruzioni che vengono interpretate e eseguite</p>
+    <p><strong>Ogni istruzione è delimitata da ;</strong></p>
+    <script>
+        var x = 5;
+        x = x + 1;
+    </script>
+    <p>inserire sempre la punteggiatura di terminazione per evitare ambiguità e risultati inattesi</p>
+    <p><strong>2. Javascript è case sensitive</strong> cioè fa distinzione tra maiuscole e minuscole</p>
+    <p>ad esempio se assegno come nome di una variabile MiaVariabile e poi la richiamo con Miavariabile sono due cose diverse</p>
+    <p><strong>3. I commenti</strong></p>
+    <p>Javascript prevede la possibilità di inserire commenti a singola riga o multi riga</p>
+    <script>
+        // singola riga
+        /* 
+        questo invece è un commento
+        che può andare su più righe 
+        */
+    </script>
+    <p><strong>4. Gli spazi bianchi</strong></p>
+    <p>Non assumono significati particolari, li posso inserire per aumentare la legibilità del codice</p>
+    <p>Eccezione: gli spazi all'interno delle stringhe (domani)</p>
+    
+</body>
+</html>

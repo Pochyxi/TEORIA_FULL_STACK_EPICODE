@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        #container {
+            width: 1024px;
+            border: 1px solid black;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        header {
+            background-color: darksalmon;
+        }
+        nav {
+            float: left;
+            width: 250px;
+        }
+        aside {
+            float: right;
+            width: 250px;
+            text-align: center;
+        }
+        img {
+            display: inline-block;
+            width: 50%;
+        }
+        main {
+            margin-left: 260px;
+            margin-right: 260px;
+        }
+        main p {
+            text-align: justify;
+        }
+        div {
+            border: 3px solid lightgreen;
+            padding: 5px;
+        }
+        .img1, .img2 {
+            float: right;
+            padding-left: 20px; /* in questo caso il padding sull'img serve a restringere il paragrafo a sinistra */
+            padding-right: 20px;
+        }
+        .clearfix {
+            overflow: auto; /* diciamo che tutto quello che va in overflow fa parte del contenitore */
+        }
+        .clearfix::after { /* metodo alternativo più moderno */
+            content: "";
+            clear: both;
+            display: table;
+         }
+         .destra img {
+             float: right;
+             width: 20%;
+         }
+         .sinistra img {
+             width: 20%;
+             float: left;
+         }
+         .sinistra, .destra {
+             overflow: auto;
+             border: 3px solid lightgreen;
+             margin: 10px auto;
+         }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+        <h1>Intestazione</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <a href="#"><img src="img/fiore_grande.png" alt=""></a>
+            <a href="#"><img src="img/fiore_grande.png" alt=""></a>
+        </aside> <!-- gli elementi che hanno float precedono quelli che non lo hanno -->
+        <main>
+            <h2>Senza clearfix</h2>
+            <p>posiziono un'immagine con <code>float:right</code> che è più alta del suo contenitore -> va in overflow</p>
+            <div>
+                <img src="img/fiore_grande.png" alt="" width="150" class="img1">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <h2 style="clear: right;">Con clearfix</h2> <!-- questo comando dice che non ci deve esserci niente a destra -->
+            <div class="clearfix">
+                <img src="img/fiore_grande.png" alt="" width="150" class="img2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="destra">
+                <img src="img/fiore_grande.png" alt="" width="150" class="img2">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores sit quis blanditiis earum, illo similique corrupti! Quis iure quod, ipsum provident quidem earum assumenda, non dolore similique culpa architecto fugit! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae aliquam laborum, nihil deleniti numquam consectetur temporibus facilis dolores quidem id cupiditate vero nulla! Adipisci, excepturi iure? Necessitatibus voluptas molestiae atque.</p>
+            </div>
+            <div class="sinistra">
+                <img src="img/fiore_grande.png" alt="" width="150" class="img2">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, ab. Similique maxime error tempora totam iure fugit, incidunt eius ducimus corporis placeat, eos sed? Dolore praesentium omnis error pariatur inventore?
+                Expedita mollitia incidunt sequi amet voluptate reiciendis harum nam quod magnam dolore, natus quidem accusantium debitis obcaecati animi sed voluptatibus aperiam odio ut perspiciatis consequatur. Exercitationem, eum qui? Nulla, corporis.</p>
+            </div>
+            <div class="destra">
+                <img src="img/fiore_grande.png" alt="" width="150" class="img2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum perferendis ipsa voluptate dolorem ipsum tenetur illo, provident saepe expedita modi optio. Dolore quisquam enim ipsum temporibus perspiciatis esse tempore.
+                Sit alias corrupti eos aut temporibus dolorum molestias at consequatur eveniet. Labore quis aperiam incidunt voluptas, corrupti optio repellat veritatis voluptates qui eveniet dolorum repudiandae eaque quae explicabo assumenda tempora?</p>
+            </div>
+            <div class="sinistra">
+                <img src="img/fiore_grande.png" alt="" width="150" class="img2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ad excepturi qui ab dignissimos nam amet, facere dicta, laborum ipsam corrupti reiciendis placeat, nostrum ducimus voluptatum odit! Modi, commodi cumque?
+                Amet eius veniam ipsam excepturi iusto explicabo ut voluptate, deleniti quisquam assumenda odio, voluptatibus neque! Similique laboriosam voluptas, iusto nobis quo aliquam officiis magni quae. Modi minus autem ipsa dolorum.</p>
+            </div>
+            <div class="destra">
+                <img src="img/fiore_grande.png" alt="" width="150" class="img2">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore dicta iure expedita deleniti adipisci quos sed modi? Harum repudiandae, nam corrupti ratione eius amet tempore consequuntur eum, corporis nemo tempora.
+                Quasi, placeat deserunt? Quidem molestiae in sint ad tempora perferendis maiores soluta! Quam eveniet, saepe praesentium, dignissimos reiciendis velit vero ut quasi alias modi adipisci exercitationem quisquam laborum at ipsa.</p>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>

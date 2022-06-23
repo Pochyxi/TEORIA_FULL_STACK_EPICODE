@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzioni 2</title>
+</head>
+<body>
+    <p>Tutto ciò che non è un dato primitivo è un oggetto. Un contenitore di valori eterogenei <br>
+       che messi insieme vanno a formare una struttura di dati e quindi a generare una particolare identità(persone, fattura, prenotazione). <br>
+        Un oggetto possiede : 1. dati (proprietà) rappresentati da coppie nome-valore 2. funzionalità (metodi) rappresentati da funzioni. <br></p>
+    <script>
+        // definiamo un oggetto a partire dal suo contenuto -> 
+        var oggettoVuoto = {}; // oggetto vuoto
+        var persona = { 'nome': 'Federico', 'cognome': 'De Ambrosis', 'eta': 41} // coppie nome-valore
+        // nomi non abbiamo le restrizioni delle variabili, però se usiamo caratteri speciali siamo obbligati a mettere i nomi tra ''
+        var persone = { nome: 'Federico', cognome: 'De Ambrosis', eta: 41}
+        // una proprietà può assumere qualsiasi valore, compreso un'altro oggetto
+        var persona = {
+            nome: 'Federico',
+            cognome: 'De Ambrosis',
+            indirizzo : {
+                via: 'Pippo',
+                numero: 1,
+                cap: 00100,
+                città: 'Milano'
+            }
+        }
+        console.log(persona);
+        // accedere a una proprietà -> dot notation
+        var nome = persone.nome;        // accedo alla proprietà nome dell'oggetto persona
+        console.log(nome);
+        var eta = persona.eta;          // se accedo ad una proprietà non definita -> undefined
+        persona.eta = 32;               // se assegno un valore a una proprietà -> creiamo la proprietà e gli assegniamo il valore
+        // gli oggetti sono dinamici, la loro struttura è flessibile e può essere modificata durante l'esecuzione
+        // definizione incrementale
+
+        var persona = {};               // parto dalla rappresentazione base (vuota)
+        persona.nome = 'Federico';      // la arricchisco con le varie proprietà
+        persona.cognome = 'De Ambrosis';
+        persona.indirizzo = {
+                via: 'Pippo',
+                numero: 1,
+                cap: 00100,
+                città: 'Milano'
+            }
+        persona.eta = 41;
+        // proprietà rappresentano i dati
+        // i metodi rappresentano le funzioni, le attività che un oggetto può compiere
+        function visualizzaNomeCognome() {return "Mario Rossi"}     // una funzione che restituisce una stringa
+        persona.nomeCognome = visualizzaNomeCognome;                // assegno il nome della funzione a una nuova proprietà del mio oggetto
+                                                                    // assegno alla proprietà la funzione tramite il nome(non il risultato)
+        // nomeCognome siccome contiene una funzione, è un metodo -> per eseguirlo ->
+        var nomeCognome = persona.nomeCognome();                    // e un metodo -> stessa sintassi delle funzioni per invocare    
+        persona.nomeCognome = function () {return 'Mario Rossi';}   // definisco la funzione direttamente mentre assegno la proprietà
+                                                                    // funzione anonima
+        // sarebbe utile avere un modo per visualizzare il valore corrente delle proprietà -> keyword 'this'
+        persona.nomeCognome = function () {return this.nome + ' ' + this.cognome; }    // visualizzo i dati correnti 
+        
+        // Closure e scope
+        // scope globale -> accessibilità estesa all'intero script
+        // scope locale  -> accesibilità ristretta a un blocco di codice (ad esempio funzione)
+
+        var saluto = 'buongiorno';
+        function saluta (persona) {                                     // funzione saluta (argomento)
+            var nomeCognome = persone.nome + ' ' + persona.cognome;
+            function visualizzaSaluto() {                               // funzione che visualizza la stringa
+                // visualizzaSaluto può accedere a una variabile locale di saluta() -> nomeCognome
+                // scope locale | globale -> scope chain (gerarchia)
+                // una funzione può accedere allo scope locale, allo scope globale (gia lo sapevamo)
+                // MA ANCHE può accedere allo scope accessibile alla funzione esterna in cui è stata definita
+                console.log(saluto + ' ' + nomeCognome);                // all'interno di una funzione posso fare riferimento a un var globale
+            }
+            visualizzaSaluto();
+        }
+        saluta({nome: 'Federico', cognome: 'De Ambrosis'});             // valorizzo l'argomento di saluta
+        visualizzaSaluto();
+
+        // ogni variabile che è o era accessibile quando una funzione è stata definita rimane "racchiusa" nello scope accessibile della funzione
+        // questo meccanismo è detto closure‰
+    </script>
+</body>
+</html>

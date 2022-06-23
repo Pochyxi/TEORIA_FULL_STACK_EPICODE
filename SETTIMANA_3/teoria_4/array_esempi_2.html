@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array esempi 2</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        //**** find -> restituisce il primo valore in un array se supera un determinato test
+        //**** findIndex -> mi restituisce l'indice del primo valore che in un array supera un test
+        //const ages = [3, 10, 18, 20];
+
+        //document.getElementById('demo').innerHTML = ages.find(checkAge);  // restituisce 20
+        //document.getElementById('demo').innerHTML = ages.findIndex(checkAge);   // restituisce 3
+        /*
+        function checkAge(age) {
+            return age > 18;
+        }
+        */
+
+        //**** filter() -> filtra in base a un determinato controllo
+        //const ages = [3, 10, 18, 20];
+        /* document.getElementById('demo').innerHTML = ages.filter(checkAdult); 
+        function checkAdult (age) {
+            return age >= 18;
+        }
+        */
+
+        //**** some -> controlla se almeno un elemento passa un determinato test
+        // const ages = [3, 10, 18, 20];
+        // document.getElementById('demo').innerHTML = ages.some(checkAdult);
+        /* function checkAdult (age) {
+            return age >= 18;
+        }
+        */
+
+        //**** map -> crea un nuovo array dal risultato di una funzione assegnata a ogni elemento
+         const numbers = [4, 9, 16, 25];
+         document.getElementById('demo').innerHTML = ages.map(Math.sqrt);  // radice quadrata
+
+        // ****isArray -> restituisce true se l'elemento è un array, altrimenti false
+        const fruits = ['Banana', 'Arancia', 'Mela', 'Mango'];
+        let result = Array.isArray(fruits); // controlla se fruits è un array
+        document.getElementById('demo').innerHTML = result;
+    </script>
+</body>
+</html>
