@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- onclick va evitato -->
+    <button onclick="f()">premi</button>
+
+    <input type="text" id="searchBar">
+
+    <div class="container">
+        <p>first child</p>
+    </div>
+
+    <form action="pagina.php" method="GET">
+        <input type="text" name="nome" id="nome" placeholder="Nome" required maxlength="10">
+        <input type="email" name="email" id="email" placeholder="Email" required >
+        <input type="password" name="password" id="password" placeholder="Password" required minlength="8">
+
+        <button type="submit" class="disabled">Invia</button>
+        <button type="reset">Cancella</button>
+    </form>
+
+
+    <script src="teoria.js"></script>
+    
+</body>
+</html>
