@@ -1,0 +1,33 @@
+// 1- installe node.js (node -v | npm -v)
+// 2- installo sass tramite npm (npm intall -g sass) (sass --version)
+//MAC/UNIX: sudo npm install -g sass (inserire la password)
+// Windows: Set-executionPolicy -executionPolicy RemoteSign 
+//  3- compilare il file sass/scss 
+// sass scss/style.scss css/style.css per compilare una sola volta
+// sass scss/style.scss css/style.css --watch per compilare sempre
+
+@import 'variables';
+@import 'buttons';
+
+$darkModeOn: true;
+
+
+// h1 {
+//     font-size: ($var * 6);
+//     color: map-get($palette, primary);
+// }
+
+.content {
+    border: 1px solid black;
+    border-radius: 5px;
+
+    //& == '.content';
+    &-title {
+        border: 2px solid red;
+    }
+
+    &:hover {
+        background-color: #a12222;
+    }
+}
+

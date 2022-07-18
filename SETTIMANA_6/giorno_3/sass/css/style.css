@@ -1,0 +1,16 @@
+button {
+  background-color: red;
+}
+
+.content {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.content-title {
+  border: 2px solid red;
+}
+.content:hover {
+  background-color: #a12222;
+}
+
+/*# sourceMappingURL=style.css.map */

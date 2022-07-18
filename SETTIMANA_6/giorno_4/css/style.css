@@ -1,0 +1,118 @@
+p {
+  padding-left: 30px;
+  color: #f00;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+h3 {
+  border-radius: 15px;
+  padding: 5px;
+  border: 1px solid blue;
+  padding: 10px 50%;
+}
+
+h4 {
+  border-top: red groove 5px;
+}
+
+.resp {
+  background-color: blue;
+}
+@media screen and (max-width: 700px) {
+  .resp {
+    background-color: orange;
+    padding-top: 50px;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h2 {
+    color: blue;
+  }
+}
+
+@-webkit-keyframes animationName {
+  from {
+    color: blue;
+  }
+  to {
+    color: green;
+  }
+}
+@keyframes animationName {
+  from {
+    color: blue;
+  }
+  to {
+    color: green;
+  }
+}
+p {
+  font-size: 40px;
+}
+
+div {
+  background-color: #660000;
+  padding-left: 20px;
+  width: 100%;
+}
+
+p {
+  font-size: 3.125rem;
+}
+
+span {
+  background-color: rgb(101, 19, 19);
+  color: white;
+}
+span:hover {
+  background-color: black;
+}
+
+.foto-a {
+  background-image: url("../images/a.jpg");
+}
+.foto-b {
+  background-image: url("../images/b.jpg");
+}
+.foto-c {
+  background-image: url("../images/c.jpg");
+}
+.foto-d {
+  background-image: url("../images/d.jpg");
+}
+
+li:nth-of-type(1) {
+  font-size: 10px;
+}
+
+li:nth-of-type(2) {
+  font-size: 20px;
+}
+
+li:nth-of-type(3) {
+  font-size: 30px;
+}
+
+li:nth-of-type(0) {
+  font-size: 0px;
+}
+
+li:nth-of-type(1) {
+  font-size: 10px;
+}
+
+li:nth-of-type(2) {
+  font-size: 20px;
+}
+
+li:nth-of-type(3) {
+  font-size: 30px;
+}
+
+li:nth-of-type(4) {
+  font-size: 40px;
+}/*# sourceMappingURL=style.css.map */

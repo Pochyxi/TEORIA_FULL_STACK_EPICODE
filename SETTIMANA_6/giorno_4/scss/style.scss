@@ -1,0 +1,225 @@
+@mixin testMixin {
+    color: #f00;
+    font-weight: bold;
+}
+
+// @mixin radius {
+//     border: solid 1px black;
+//     border-radius: $rad;
+//     padding: 5px;
+// }
+
+// il mixin (come le funsioni) possono avere parametri
+// @mixin radius($rad) {
+//     border: solid 1px black;
+//     border-radius: $rad;
+//     padding: 5px;
+// }
+
+@mixin radius($rad) { // il parametro può avere un valore di default, attenzione che i parametri di default non possono essere saltati
+    
+    border-radius: $rad;
+    padding: 5px;
+}
+
+@mixin bordered($border...) { // non si usa molto
+    border: $border;
+}
+
+@mixin padded($pad...) { // non si usa molto
+    padding: $pad;
+}
+
+//interpollazione #{} - iniettare il codice, completare il nome di una proprietà usando una variabile
+@mixin customBorder($side, $color: black, $style: inset, $size: 10px) {
+    border-#{$side}: $color $style $size;
+}
+p {
+    padding-left: 30px;
+    @include testMixin;
+    @include radius(10px);
+}
+
+
+
+h3 {
+    @include radius(15px);
+    @include bordered(1px solid blue);
+    @include padded(10px 50%);
+}
+
+h4 {
+   @include customBorder('top', red, groove, 5px);
+}
+
+@mixin background($type, $color) { 
+    background-#{$type}: $color;
+}
+
+@mixin responsive { // l'elemento content ci permette di personalizare poi nell'include altri parametri da assumere
+    @media screen and (max-width: 700px) {
+        @content;
+    }
+}
+.resp {
+    @include background('color', blue);
+    @include responsive {
+        @include background('color', orange); // tutte queste impostazione vengono messe grazie a @content
+        padding-top: 50px;
+        font-size: 3rem;
+    };
+}
+h2 {
+    @include responsive{
+        color: blue;
+    };
+    
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+    @keyframes #{$name} {
+      @content;
+    }
+  }
+
+@include keyframes(animationName) {
+    from {
+        color: blue;
+    };
+    to {
+        color: green;
+    };
+}
+
+// TODO: @content
+// Media Queries - in sass possiamo inserire le media queries dentro al selettore parent
+// @extend .prova; assume tutte le proprietà che ci sono in quella classe 
+
+// FUNCTIONS @function - la funzione esegue la logica e restituisce (@return) 
+// a differenza del mixin che 'restituisce' un set di regole (e queries)
+
+@function f($a, $b) {
+    @return ($a + $b) + px;
+}
+p {
+    font-size: f(10, 30);
+}
+
+
+
+// alcune funzioni utili gia pronte (alcune esistono anche in css)
+
+div {
+    background-color: darken(red, 30%);
+    
+    padding-left: 20px;
+    width: 100%;
+}
+
+@function rem($px, $rootSize: 16) {
+    @return ($px / $rootSize) * 1rem;
+}
+
+p{
+    font-size: rem(50);
+}
+
+
+ // IF
+// può essere usato sia nelle funzione sia nei mixin
+ @function textColor($backGroundColor) {
+    @if lightness($backGroundColor) > 50 {
+        @return black;
+    }
+    @else {
+        @return white;
+    }
+ }
+
+@mixin theme($backGroundColor, $darkThemeOn: false) {
+   
+        background-color: $backGroundColor;
+        color: textColor($backGroundColor);
+        &:hover {
+            @if $darkThemeOn {
+                background-color: black;
+            }
+            @else {
+                background-color: white;
+            }
+    }
+        
+    
+}
+
+$bg: rgb(101, 19, 19);
+
+
+ span {
+     @include theme($bg, true);
+ }
+
+ //cicli each, for e while - @each @for @while
+ // @each serve per le liste di dati
+
+//  .foto {
+//     &-a {
+//         background-image: url(../images/a);
+//     }
+//     &-b {
+//         background-image: url(../images/b);
+//     }
+//     &-c {
+//         background-image: url(../images/c);
+//     }
+//     &-d {
+//         background-image: url(../images/d);
+//     }
+//  }
+
+@mixin fotoBg($foto) {
+    &-#{$foto}{background-image: url('../images/' + $foto + '.jpg');}
+}
+
+$photos: 'a', 'b', 'c', 'd';
+
+.foto {
+    @each $p in $photos {
+        @include fotoBg($p);
+    }
+}
+
+$div: (black, false, 5), (red, true, 20), (blue, true, 5);
+
+$caratteristiche: (black, false, 5);
+
+@mixin defaultDiv ($bg, $bordered, $pad) {
+
+}
+
+// FOR
+
+@for $i from 1 through 3 {
+    li:nth-of-type(#{$i}) {
+        font-size: $i * 10px;
+    }
+}
+@for $i from 1 to 3 {}
+
+//WHILE
+
+$j: 0;
+@while $j < 5 {
+    li:nth-of-type(#{$j}) {
+        font-size: $j * 10px;
+    }
+    $j: $j+1;
+}
+
+ 
