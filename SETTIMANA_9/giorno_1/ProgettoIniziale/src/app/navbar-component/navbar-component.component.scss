@@ -1,0 +1,29 @@
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: indigo;
+  color: white;
+  padding: .5em;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      list-style: none;
+      margin: 1em;
+
+      a:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+}
+
+
+
+
